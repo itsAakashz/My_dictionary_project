@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Word Search Website</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+
+		/* Navigation Bar */
+		.navbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: #333;
+			padding: 10px;
+			position: sticky;
+			top: 0;
+			z-index: 1;
+		}
+
+		.navbar a {
+			color: #f2f2f2;
+			text-decoration: none;
+			margin: 0 10px;
+			padding: 10px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.navbar a:hover {
+			background-color: #555;
+		}
+
+		.logo {
+			color: #f2f2f2;
+			font-size: 24px;
+			font-weight: bold;
+			margin-left: 10px; 
+			transition: color 0.3s ease;
+		}
+
+		.logo:hover {
+			color: #ccc;
+		}
+
+		/* Search Box */
+		.search-box {
+			display: flex;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		.search-box input[type="text"] {
+			flex: 1;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			font-size: 16px;
+			transition: box-shadow 0.3s ease;
+		}
+
+		.search-box input[type="text"]:focus {
+			box-shadow: 0 0 5px #555;
+		}
+
+		.search-box button {
+			padding: 10px;
+			background-color: #333;
+			color: #f2f2f2;
+			border: none;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.search-box button:hover {
+			background-color: #555;
+		}
+
+		/* Animated Word */
+		.animated-word {
+			animation: pulse 2s ease infinite;
+		}
+
+		@keyframes pulse {
+			0% { transform: scale(1); }
+			50% { transform: scale(1.2); }
+			100% { transform: scale(1); }
+		}
+
+		/* Word Grid */
+		.word-grid {
+			display: grid;
+			grid-template-columns: repeat(10, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+			grid-gap: 5px;
+			margin: 20px 0;
+			width: 80%;
+			max-width: 800px;
+			align-self: center;
+			justify-self: center;
+			position: relative;
+		}
+
+		.word {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 5px #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+			transition: background-color 0.3s ease;
+			cursor: pointer;
+		position: relative;
+		z-index: 1;
+	}
+
+	.word:hover {
+		background-color: #f2f2f2;
+	}
+
+	.word::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #333;
+		opacity: 0.5;
+		visibility: hidden;
+		transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+		z-index: -1;
+	}
+
+	.word:hover::after {
+		opacity: 0.5;
+		visibility: visible;
+		transition-delay: 0s;
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		.word-grid {
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+		}
+	}
+
+	@media (max-width: 576px) {
+		.word-grid {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+		}
+
+		.search-box {
+			flex-direction: column;
+		}
+
+		.search-box input[type="text"] {
+			margin-bottom: 10px;
+		}
+	}
+</style>
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<div class="navbar">
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Contact</a>
+		<span class="logo">Word Search</span>
+	</div>
+	<!-- Search Box -->
+<div class="search-box">
+	<input type="text" placeholder="Enter a word...">
+	<button>Search</button>
+</div>
+
+<!-- Animated Word -->
+<div class="animated-word">
+	<h1>Word Search</h1>
+</div>
+
+<!-- Word Grid -->
+<div class="word-grid">
+	<div class="word">A</div>
+	<div class="word">B</div>
+	<div class="word">C</div>
+	<div class="word">D</div>
+	<div class="word">E</div>
+	<div class="word">F</div>
+	<div class="word">G</div>
+	<div class="word">H</div>
+	<div class="word">I</div>
+	<div class="word">J</div>
+	<div class="word">K</div>
+	<div class="word">L</div>
+	<div class="word">M</div>
+	<div class="word">N</div>
+	<div class="word">O</div>
+	<div class="word">P</div>
+	<div class="word">Q</div>
+	<div class="word">R</div>
+	<div class="word">S</div>
+	<div class="word">T</div>
+	<div class="word">U</div>
+	<div class="word">V</div>
+	<div class="word">W</div>
+	<div class="word">X</div>
+	<div class="word">Y</div>
+	<div class="word">Z</div>
+</div>
+</body>
+</html>
